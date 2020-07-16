@@ -1,0 +1,29 @@
+<div>
+	<table class="c-table">
+		<thead>
+			<th
+				*ngFor="let field of fields; index as i;"
+			>
+				{{ field.title }}
+			</th>
+		</thead>
+		<tbody>
+			<tr
+				*ngFor="let row of data; index as i;"
+			>
+				<td
+					*ngFor="let field of fields; index as fI;"
+				>
+					<span *ngIf="!field.component; else elseBlock">
+						{{ onGetFieldName(row, 'name', fI) }}
+					</span>
+					<ng-template #elseBlock>
+						<ng-container
+							*ngTemplateOutlet="this[field.component]; context: { props: row }"
+						></ng-container>
+					</ng-template>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

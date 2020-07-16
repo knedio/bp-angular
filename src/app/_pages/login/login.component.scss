@@ -1,0 +1,18 @@
+.container {
+	width: 40%;
+}
+@media only screen and (max-width: 599px) {
+	.container {
+		width: 90% !important;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.container {
+		width: 60%;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.container {
+		width: 50%;
+	}
+}

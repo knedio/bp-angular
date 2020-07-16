@@ -1,0 +1,17 @@
+<div 
+    *ngIf="errors"
+    class="text-xs text-red-500 italic font-body"
+  >
+  <p 
+    *ngIf="errors.required"
+    class="mt-2" 
+  >
+    <small>{{ label }} is required.</small>
+  </p>
+  <p 
+    *ngIf="errors.minlength"
+    class="mt-2" 
+  >
+    <small>The {{ label }} must be at least {{ errors.minlength.requiredLength }} character.</small>
+  </p>
+</div>

@@ -1,0 +1,35 @@
+<div class="w-full flex flex-col">
+	<form
+		class="w-full flex flex-col"
+		[formGroup]="form"
+		(ngSubmit)="onSubmit()"
+	>
+		<div
+			*ngIf="errorMessage != ''"
+			class="text-base text-semibold text-red-700 text-center mb-2"
+		>
+			{{ errorMessage }}
+		</div>
+		<app-form-input-field
+			[id]="'email'"
+			formControlName="email"
+			[label]="'Email Address'"
+			[errors]="f.email.errors"
+			[isError]="f.email.invalid && f.email.dirty"
+			[(ngModel)]="email"
+			></app-form-input-field>
+		<app-form-input-field
+			[id]="'password'"
+			formControlName="password"
+			[label]="'Password'"
+			[type]="'password'"
+			[errors]="f.password.errors"
+			[isError]="f.password.invalid && f.password.dirty"
+			></app-form-input-field>
+		<app-button
+			class="ml-auto"
+			label="Login"
+			[disabled]="form.invalid"
+		></app-button>
+	</form>
+</div>

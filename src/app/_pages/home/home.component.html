@@ -1,0 +1,11 @@
+<div>
+	<app-table
+		[fields]="fields"
+		[data]="data"
+		[__actions]="__actions"
+	>
+		<ng-template #__actions let-props="props">
+			<p>{{ props.created_at }}</p>          
+		</ng-template>
+	</app-table>
+</div>
